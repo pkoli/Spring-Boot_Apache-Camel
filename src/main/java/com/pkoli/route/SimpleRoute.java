@@ -1,4 +1,4 @@
-package com.barclaycardus.route;
+package com.pkoli.route;
 
 /**
  * Created by Pavan on 14-05-2017.
@@ -17,7 +17,7 @@ public class SimpleRoute extends RouteBuilder {
 
     @Override
     public void configure() throws Exception {
-        from("spring-ws:rootqname:{http://barclaycardus.com}getCountryRequest?endpointMapping=#endpointMapping")
+        from("spring-ws:rootqname:{http://pkoli.com}getCountryRequest?endpointMapping=#endpointMapping")
                 .to("log:"+message)
                 .process(new SimpleProcessor());
     }

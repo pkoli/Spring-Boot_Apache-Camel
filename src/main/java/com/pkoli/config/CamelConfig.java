@@ -1,4 +1,4 @@
-package com.barclaycardus.config;
+package com.pkoli.config;
 
 import org.apache.camel.component.spring.ws.bean.CamelEndpointMapping;
 import org.springframework.context.annotation.Bean;
