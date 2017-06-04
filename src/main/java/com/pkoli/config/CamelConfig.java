@@ -31,14 +31,4 @@ public class CamelConfig {
         return new PropertySourcesPlaceholderConfigurer();
     }
 
-    /*@Bean
-    @Primary
-    public static BridgePropertyPlaceholderConfigurer bridgePropertyPlaceholderConfigurer(){
-        BridgePropertyPlaceholderConfigurer propertyPlaceholderConfigurer = new BridgePropertyPlaceholderConfigurer();
-        Resource[] resources = new ClassPathResource[]
-                { new ClassPathResource( "simple-camel.properties" ) };
-        propertyPlaceholderConfigurer.setLocations(resources);
-        return propertyPlaceholderConfigurer;
-    }*/
-
 }
