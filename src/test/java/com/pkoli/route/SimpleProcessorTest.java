@@ -24,63 +24,8 @@ import org.springframework.test.context.ContextConfiguration;
         loader = CamelSpringDelegatingTestContextLoader.class
 )
 @MockEndpoints
-public class SimpleProcessorTest/* extends CamelTestSupport*/{
-/*
-*send and *request difference
+public class SimpleProcessorTest {
 
-    @Override
-    public boolean isCreateCamelContextPerClass() {
-        // we override this method and return true, to tell Camel test-kit that
-        // it should only create CamelContext once (per class), so we will
-        // re-use the CamelContext between each test method in this class
-        return true;
-    }
-
-    @Override
-    protected RouteBuilder createRouteBuilder() throws Exception {
-        return new RouteBuilder() {
-            @Override
-            public void configure() throws Exception {
-                from("ftp://host/data/inbox").
-                        routeId("main").
-                        to("file:data/outbox");
-            }
-        };
-    }
-
-    @Override
-    public boolean isUseAdviceWith() {
-        // Indicates we are using advice with, which allows us to advise the route
-        // before Camel is started
-        return true;
-    }
-
-    @Test
-    public void TestMe() throws Exception {
-        // alter the original route
-        context.getRouteDefinition("main").adviceWith(context,
-                new AdviceWithRouteBuilder() {
-                    @Override
-                    public void configure() throws Exception {
-                        replaceFromWith("direct:input");
-                        interceptSendToEndpoint("file:data/outbox")
-                                .skipSendToOriginalEndpoint()
-                                .to("mock:done");
-                    }
-                });
-        context.start();
-
-        // write unit test following AAA (Arrange, Act, Assert)
-        String bodyContents = "Hello world";
-        MockEndpoint endpoint = getMockEndpoint("mock:done");
-        endpoint.expectedMessageCount(1);
-        endpoint.expectedBodiesReceived(bodyContents);
-
-        template.sendBody("direct:input", bodyContents);
-
-        assertMockEndpointsSatisfied();
-    }
-*/
     @EndpointInject(uri = "mock:direct:end")
     protected MockEndpoint endEndpoint;
 
